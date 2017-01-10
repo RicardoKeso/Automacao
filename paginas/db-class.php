@@ -32,12 +32,15 @@ Class Database {
 	
 	public function atualizarStatus($pino){
 		$inicio = round(microtime(true) * 1000);
-		$dbh = Database::StartPDO();
+		
 		$retorno = Database::stausNomePino($pino);
+		$dbh = Database::StartPDO();
 		$status = (($retorno[0] == 1) ? 0 : 1);
 		$dbh->query("UPDATE gpioControl SET alterar=1, status=" . $status . " WHERE board==" . $pino . ";");
-		$fim = round(microtime(true) * 1000);
+		
+		$fim = round(microtime(true) * 1000);		
 		echo ($fim - $inicio);
+		
 		$dbh = NULL;
 	}
 }
