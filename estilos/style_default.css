@@ -57,10 +57,10 @@ button {
 	color: #B22222;
 }
 
-.botao:hover {
+.botao, .botaoGreen:hover, .botaoRed:hover {
 	background-color: #EEE;
 	border-color: #47C;
 	border-radius: 5px;
-	color: #038;
-	font-size: 23px;
+	/*color: #038;*/
+	font-size: 25px;
 }
