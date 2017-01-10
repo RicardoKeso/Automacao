@@ -1,0 +1,66 @@
+body{
+	padding: 0px;
+	border: 0px;
+	margin: 0px;
+	background-color: grey;
+}
+
+#principal {
+	background-color: white;
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+table {
+	width: 50%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+table, td {
+	border: 1px solid black;
+	text-align: center;
+}
+
+td {
+	height: 80px;
+}
+
+
+/***********************************************BOTAO*/
+button {
+	width: 120px;
+	height: 45px;
+}
+
+.botao, .botaoGreen, .botaoRed {
+	background-color: #DDD;
+	border: solid 1px;
+	border-color: #999;
+	padding: 0px;
+	border-radius: 5px;
+	display: inline-block;
+	/*color: black;*/
+	
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 22px;
+}
+
+.botaoGreen{
+	/*background-color: green;*/	
+	color: green;
+}
+
+.botaoRed{	
+	/*background-color: red;*/		
+	color: #B22222;
+}
+
+.botao:hover {
+	background-color: #EEE;
+	border-color: #47C;
+	border-radius: 5px;
+	color: #038;
+	font-size: 23px;
+}

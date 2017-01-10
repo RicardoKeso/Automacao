@@ -1,0 +1,19 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+
+<body>
+	<form action="http://192.168.20.3/automacao/paginas/recebimento.php" method="post" name="teste01">
+		<input type="hidden" name="valor" value="keso"><br>
+	</form> 
+</body>
+
+<script language="JavaScript">document.teste01.submit();</script>
+
+</html> 
+
+
+

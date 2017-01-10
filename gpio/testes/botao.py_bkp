@@ -1,0 +1,43 @@
+#!/usr/bin/python2.7
+
+import RPi.GPIO as GPIO
+import sys, os, sqlite3
+from datetime import datetime
+
+def statusPino(pino):
+    conn = sqlite3.connect('../db/automacao.db')
+    cursor = conn.cursor()
+    status = 0;
+
+    sql = "select status from automacao where pino=?"
+    cursor.execute(sql, [(pino)])
+
+    for linha in cursor.fetchone():
+        status = linha
+
+    conn.close()
+
+    return status
+
+
+
+while True:
+    caminho = os.path.expanduser("mudarEstado/") 
+    mudarEstados = os.listdir(caminho)
+
+
+    if len(mudarEstados) != 0:
+        for pino in mudarEstados:
+            estado = statusPino(pino)
+
+            print "pino " + str(pino) + " - " + str(datetime.now())
+
+            GPIO.setmode(GPIO.BOARD)
+            GPIO.setwarnings(False) #desabilita os alertas
+            GPIO.setup(int(pino), GPIO.OUT)
+            GPIO.output(int(pino), int(estado))
+
+            os.remove(caminho + str(pino))
+
+
+# print statusPino(7)
